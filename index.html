@@ -6,10 +6,10 @@
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
-            name="description"
-            content="Documentation for the Kittn API"
+            name="Drools DMN FEEL handbook"
+            content="FEEL Pocket reference, FEEL handbook, FEEL vademecum of the FEEL expression language from the DMN specification"
         >
-    <title>API Reference</title>
+    <title>Drools DMN FEEL handbook</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -295,7 +295,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -303,296 +303,2303 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
-        </div>
+      <img src="images/logo-a56c74fb.png" class="logo" alt="" />
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#dmn-feel-handbook" class="toc-h1 toc-link" data-title="DMN FEEL handbook">DMN FEEL handbook</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#boolean-functions" class="toc-h1 toc-link" data-title="Boolean functions">Boolean functions</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#not-negand" class="toc-h2 toc-link" data-title="not( negand )">not( negand )</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            <a href="#string-functions" class="toc-h1 toc-link" data-title="String functions">String functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#substring-string-start-position-length" class="toc-h2 toc-link" data-title="substring( string, start position, length? )">substring( string, start position, length? )</a>
+                  </li>
+                  <li>
+                    <a href="#string-length-string" class="toc-h2 toc-link" data-title="string length( string )">string length( string )</a>
+                  </li>
+                  <li>
+                    <a href="#upper-case-string" class="toc-h2 toc-link" data-title="upper case( string )">upper case( string )</a>
+                  </li>
+                  <li>
+                    <a href="#lower-case-string" class="toc-h2 toc-link" data-title="lower case( string )">lower case( string )</a>
+                  </li>
+                  <li>
+                    <a href="#substring-before-string-match" class="toc-h2 toc-link" data-title="substring before( string, match )">substring before( string, match )</a>
+                  </li>
+                  <li>
+                    <a href="#substring-after-string-match" class="toc-h2 toc-link" data-title="substring after( string, match )">substring after( string, match )</a>
+                  </li>
+                  <li>
+                    <a href="#replace-input-pattern-replacement-flags" class="toc-h2 toc-link" data-title="replace( input, pattern, replacement, flags? )">replace( input, pattern, replacement, flags? )</a>
+                  </li>
+                  <li>
+                    <a href="#contains-string-match" class="toc-h2 toc-link" data-title="contains( string, match )">contains( string, match )</a>
+                  </li>
+                  <li>
+                    <a href="#starts-with-string-match" class="toc-h2 toc-link" data-title="starts with( string, match )">starts with( string, match )</a>
+                  </li>
+                  <li>
+                    <a href="#ends-with-string-match" class="toc-h2 toc-link" data-title="ends with( string, match )">ends with( string, match )</a>
+                  </li>
+                  <li>
+                    <a href="#matches-input-pattern-flags" class="toc-h2 toc-link" data-title="matches( input, pattern, flags? )">matches( input, pattern, flags? )</a>
+                  </li>
+                  <li>
+                    <a href="#split-string-delimiter" class="toc-h2 toc-link" data-title="split( string, delimiter )">split( string, delimiter )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#list-functions" class="toc-h1 toc-link" data-title="List functions">List functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#list-contains-list-element" class="toc-h2 toc-link" data-title="list contains( list, element )">list contains( list, element )</a>
+                  </li>
+                  <li>
+                    <a href="#count-list" class="toc-h2 toc-link" data-title="count( list )">count( list )</a>
+                  </li>
+                  <li>
+                    <a href="#min-list" class="toc-h2 toc-link" data-title="min( list )">min( list )</a>
+                  </li>
+                  <li>
+                    <a href="#max-list" class="toc-h2 toc-link" data-title="max( list )">max( list )</a>
+                  </li>
+                  <li>
+                    <a href="#sum-list" class="toc-h2 toc-link" data-title="sum( list )">sum( list )</a>
+                  </li>
+                  <li>
+                    <a href="#mean-list" class="toc-h2 toc-link" data-title="mean( list )">mean( list )</a>
+                  </li>
+                  <li>
+                    <a href="#all-list" class="toc-h2 toc-link" data-title="all( list )">all( list )</a>
+                  </li>
+                  <li>
+                    <a href="#any-list" class="toc-h2 toc-link" data-title="any( list )">any( list )</a>
+                  </li>
+                  <li>
+                    <a href="#sublist-list-start-position-length" class="toc-h2 toc-link" data-title="sublist( list, start position, length? )">sublist( list, start position, length? )</a>
+                  </li>
+                  <li>
+                    <a href="#append-list-item" class="toc-h2 toc-link" data-title="append( list, item )">append( list, item )</a>
+                  </li>
+                  <li>
+                    <a href="#concatenate-list" class="toc-h2 toc-link" data-title="concatenate( list )">concatenate( list )</a>
+                  </li>
+                  <li>
+                    <a href="#insert-before-list-position-newitem" class="toc-h2 toc-link" data-title="insert before( list, position, newItem )">insert before( list, position, newItem )</a>
+                  </li>
+                  <li>
+                    <a href="#remove-list-position" class="toc-h2 toc-link" data-title="remove( list, position )">remove( list, position )</a>
+                  </li>
+                  <li>
+                    <a href="#reverse-list" class="toc-h2 toc-link" data-title="reverse( list )">reverse( list )</a>
+                  </li>
+                  <li>
+                    <a href="#index-of-list-match" class="toc-h2 toc-link" data-title="index of( list, match )">index of( list, match )</a>
+                  </li>
+                  <li>
+                    <a href="#union-list" class="toc-h2 toc-link" data-title="union( list )">union( list )</a>
+                  </li>
+                  <li>
+                    <a href="#distinct-values-list" class="toc-h2 toc-link" data-title="distinct values( list )">distinct values( list )</a>
+                  </li>
+                  <li>
+                    <a href="#flatten-list" class="toc-h2 toc-link" data-title="flatten( list )">flatten( list )</a>
+                  </li>
+                  <li>
+                    <a href="#product-list" class="toc-h2 toc-link" data-title="product( list )">product( list )</a>
+                  </li>
+                  <li>
+                    <a href="#median-list" class="toc-h2 toc-link" data-title="median( list )">median( list )</a>
+                  </li>
+                  <li>
+                    <a href="#stddev-list" class="toc-h2 toc-link" data-title="stddev( list )">stddev( list )</a>
+                  </li>
+                  <li>
+                    <a href="#mode-list" class="toc-h2 toc-link" data-title="mode( list )">mode( list )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#numeric-functions" class="toc-h1 toc-link" data-title="Numeric functions">Numeric functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#decimal-n-scale" class="toc-h2 toc-link" data-title="decimal( n, scale )">decimal( n, scale )</a>
+                  </li>
+                  <li>
+                    <a href="#floor-n" class="toc-h2 toc-link" data-title="floor( n )">floor( n )</a>
+                  </li>
+                  <li>
+                    <a href="#ceiling-n" class="toc-h2 toc-link" data-title="ceiling( n )">ceiling( n )</a>
+                  </li>
+                  <li>
+                    <a href="#abs-n" class="toc-h2 toc-link" data-title="abs( n )">abs( n )</a>
+                  </li>
+                  <li>
+                    <a href="#modulo-dividend-divisor" class="toc-h2 toc-link" data-title="modulo( dividend, divisor )">modulo( dividend, divisor )</a>
+                  </li>
+                  <li>
+                    <a href="#sqrt-number" class="toc-h2 toc-link" data-title="sqrt( number )">sqrt( number )</a>
+                  </li>
+                  <li>
+                    <a href="#log-number" class="toc-h2 toc-link" data-title="log( number )">log( number )</a>
+                  </li>
+                  <li>
+                    <a href="#exp-number" class="toc-h2 toc-link" data-title="exp( number )">exp( number )</a>
+                  </li>
+                  <li>
+                    <a href="#odd-number" class="toc-h2 toc-link" data-title="odd( number )">odd( number )</a>
+                  </li>
+                  <li>
+                    <a href="#even-number" class="toc-h2 toc-link" data-title="even( number )">even( number )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#date-and-time-functions" class="toc-h1 toc-link" data-title="Date and time functions">Date and time functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#is-value1-value2" class="toc-h2 toc-link" data-title="is( value1, value2 )">is( value1, value2 )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#range-functions" class="toc-h1 toc-link" data-title="Range functions">Range functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#before" class="toc-h2 toc-link" data-title="before( )">before( )</a>
+                  </li>
+                  <li>
+                    <a href="#after" class="toc-h2 toc-link" data-title="after( )">after( )</a>
+                  </li>
+                  <li>
+                    <a href="#meets" class="toc-h2 toc-link" data-title="meets( )">meets( )</a>
+                  </li>
+                  <li>
+                    <a href="#met-by" class="toc-h2 toc-link" data-title="met by( )">met by( )</a>
+                  </li>
+                  <li>
+                    <a href="#overlaps" class="toc-h2 toc-link" data-title="overlaps( )">overlaps( )</a>
+                  </li>
+                  <li>
+                    <a href="#overlaps-before" class="toc-h2 toc-link" data-title="overlaps before( )">overlaps before( )</a>
+                  </li>
+                  <li>
+                    <a href="#overlaps-after" class="toc-h2 toc-link" data-title="overlaps after( )">overlaps after( )</a>
+                  </li>
+                  <li>
+                    <a href="#finishes" class="toc-h2 toc-link" data-title="finishes( )">finishes( )</a>
+                  </li>
+                  <li>
+                    <a href="#finished-by" class="toc-h2 toc-link" data-title="finished by( )">finished by( )</a>
+                  </li>
+                  <li>
+                    <a href="#includes" class="toc-h2 toc-link" data-title="includes( )">includes( )</a>
+                  </li>
+                  <li>
+                    <a href="#during" class="toc-h2 toc-link" data-title="during( )">during( )</a>
+                  </li>
+                  <li>
+                    <a href="#starts" class="toc-h2 toc-link" data-title="starts( )">starts( )</a>
+                  </li>
+                  <li>
+                    <a href="#started-by" class="toc-h2 toc-link" data-title="started by( )">started by( )</a>
+                  </li>
+                  <li>
+                    <a href="#coincides" class="toc-h2 toc-link" data-title="coincides( )">coincides( )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#temporal-functions" class="toc-h1 toc-link" data-title="Temporal functions">Temporal functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#day-of-year-date" class="toc-h2 toc-link" data-title="day of year( date )">day of year( date )</a>
+                  </li>
+                  <li>
+                    <a href="#day-of-week-date" class="toc-h2 toc-link" data-title="day of week( date )">day of week( date )</a>
+                  </li>
+                  <li>
+                    <a href="#month-of-year-date" class="toc-h2 toc-link" data-title="month of year( date )">month of year( date )</a>
+                  </li>
+                  <li>
+                    <a href="#month-of-year-date-2" class="toc-h2 toc-link" data-title="month of year( date )">month of year( date )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sort-functions" class="toc-h1 toc-link" data-title="Sort functions">Sort functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#sort-list-precedes" class="toc-h2 toc-link" data-title="sort( list, precedes )">sort( list, precedes )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#context-functions" class="toc-h1 toc-link" data-title="Context functions">Context functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-value-m-key" class="toc-h2 toc-link" data-title="get value( m, key )">get value( m, key )</a>
+                  </li>
+                  <li>
+                    <a href="#get-entries-m" class="toc-h2 toc-link" data-title="get entries( m )">get entries( m )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#conversion-functions" class="toc-h1 toc-link" data-title="Conversion functions">Conversion functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#date-from-string" class="toc-h2 toc-link" data-title="date( from: string )">date( from: string )</a>
+                  </li>
+                  <li>
+                    <a href="#date-from-date-and-time" class="toc-h2 toc-link" data-title="date( from: date and time )">date( from: date and time )</a>
+                  </li>
+                  <li>
+                    <a href="#date-year-month-day" class="toc-h2 toc-link" data-title="date( year, month, day )">date( year, month, day )</a>
+                  </li>
+                  <li>
+                    <a href="#date-and-time-date-time" class="toc-h2 toc-link" data-title="date and time( date, time )">date and time( date, time )</a>
+                  </li>
+                  <li>
+                    <a href="#date-and-time-from" class="toc-h2 toc-link" data-title="date and time( from )">date and time( from )</a>
+                  </li>
+                  <li>
+                    <a href="#time-from-string" class="toc-h2 toc-link" data-title="time( from: string )">time( from: string )</a>
+                  </li>
+                  <li>
+                    <a href="#time-from-date-and-time" class="toc-h2 toc-link" data-title="time( from: date and time )">time( from: date and time )</a>
+                  </li>
+                  <li>
+                    <a href="#time-hour-minute-second-offset" class="toc-h2 toc-link" data-title="time( hour, minute, second, offset? )">time( hour, minute, second, offset? )</a>
+                  </li>
+                  <li>
+                    <a href="#number-from-grouping-separator-decimal-separator" class="toc-h2 toc-link" data-title="number( from, grouping separator, decimal separator )">number( from, grouping separator, decimal separator )</a>
+                  </li>
+                  <li>
+                    <a href="#string-from" class="toc-h2 toc-link" data-title="string( from )">string( from )</a>
+                  </li>
+                  <li>
+                    <a href="#duration-from" class="toc-h2 toc-link" data-title="duration( from )">duration( from )</a>
+                  </li>
+                  <li>
+                    <a href="#years-and-months-duration-from-to" class="toc-h2 toc-link" data-title="years and months duration( from, to )">years and months duration( from, to )</a>
+                  </li>
+              </ul>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li>Refer to the <a href='https://www.drools.org/learn/documentation.html'>full Drools doc (here)</a>.</li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='dmn-feel-handbook'>DMN FEEL handbook</h1>
+<p>This is a vademecum for the FEEL expression language from the DMN specification, as also implemented by the Drools DMN open source engine.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
+<p>This is not intented as an exahustive documentation of the DMN capabilities of Drools; this is intended as a handy a pocket reference for FEEL usage.
+You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
+<h1 id='boolean-functions'>Boolean functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>boolean</code>s.</p>
+<h2 id='not-negand'>not( negand )</h2>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>Examples</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight plaintext"><code>not( true ) = false
+not( null ) = null
 </code></pre></div>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>negand</code></td>
+<td><code>boolean</code></td>
+</tr>
+</tbody></table>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>Performs the logical negation of the <code>negand</code> operand.</p>
+<h1 id='string-functions'>String functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>string</code>s.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+In FEEL, Unicode characters are counted based on their code points.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
-</code></pre></div>
+<h2 id='substring-string-start-position-length'>substring( string, start position, length? )</h2>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Examples:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<div class="highlight"><pre class="highlight plaintext"><code>substring( "testing",3 ) = "sting"
+substring( "testing",3,3 ) = "sti"
+substring( "testing", -2, 1 ) = "n"
+substring( "\U01F40Eab", 2 ) = "ab"
+</code></pre></div>
+<p>Returns the substring from the start position for the specified length. The first character is at position value <code>1</code>.</p>
+
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
+<th>Type</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td><code>string</code></td>
+<td><code>string</code></td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><code>start position</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>length</code>  (Optional)</td>
+<td><code>number</code></td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+In FEEL, the string literal <code>"\U01F40Eab"</code> is the <code>"🐎ab"</code> string
+(horse emoji followed by "a" and "b" characters).
 </aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
+<h2 id='string-length-string'>string length( string )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>string length( "tes" ) = 3
+string length( "\U01F40Eab" ) = 3
+</code></pre></div>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td><code>string</code></td>
+<td><code>string</code></td>
 </tr>
 </tbody></table>
+
+<p>Calculates the length of the specified string.</p>
+<h2 id='upper-case-string'>upper case( string )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>upper case( "aBc4" ) = "ABC4"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Produces an uppercase version of the specified string.</p>
+<h2 id='lower-case-string'>lower case( string )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>lower case( "aBc4" ) = "abc4"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Produces a lowercase version of the specified string.</p>
+<h2 id='substring-before-string-match'>substring before( string, match )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>substring before( "testing", "ing" ) = "test"
+substring before( "testing", "xyz" ) = ""
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Calculates the substring before the match.</p>
+<h2 id='substring-after-string-match'>substring after( string, match )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>substring after( "testing", "test" ) = "ing"
+substring after( "", "a" ) = ""
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Calculates the substring after the match.</p>
+<h2 id='replace-input-pattern-replacement-flags'>replace( input, pattern, replacement, flags? )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>replace( "abcd", "(ab)|(a)", "[1=$1][2=$2]" ) = "[1=ab][2=]cd"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>input</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>replacement</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>flags</code> (Optional)</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Calculates the regular expression replacement.</p>
+
+<aside class="notice">
+This function uses regular expression parameters as defined in
+<a href="https://www.w3.org/TR/xquery-operators/#regex-syntax">XQuery 1.0 and XPath 2.0 Functions and Operators</a>.
+</aside>
+<h2 id='contains-string-match'>contains( string, match )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>contains( "testing", "to" ) = false
+</code></pre></div>
+<p>Returns <code>true</code> if the string contains the match.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+<h2 id='starts-with-string-match'>starts with( string, match )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>starts with( "testing", "te" ) = true
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the string starts with the match</p>
+<h2 id='ends-with-string-match'>ends with( string, match )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>ends with( "testing", "g" ) = true
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the string ends with the match.</p>
+<h2 id='matches-input-pattern-flags'>matches( input, pattern, flags? )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>matches( "teeesting", "^te*sting" ) = true
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>input</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>flags</code> (Optional)</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the input matches the regular expression.</p>
+
+<aside class="notice">
+This function uses regular expression parameters as defined in
+<a href="https://www.w3.org/TR/xquery-operators/#regex-syntax">XQuery 1.0 and XPath 2.0 Functions and Operators</a>.
+</aside>
+<h2 id='split-string-delimiter'>split( string, delimiter )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>split( "John Doe", "\\s" ) = ["John", "Doe"]
+split( "a;b;c;;", ";" ) = ["a","b","c","",""]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>delimiter</code></td>
+<td><code>string</code> for a regular expression pattern</td>
+</tr>
+</tbody></table>
+
+<p>Returns a list of the original string and splits it at the delimiter
+regular expression pattern.</p>
+
+<aside class="notice">
+This function uses regular expression parameters as defined in
+<a href="https://www.w3.org/TR/xquery-operators/#regex-syntax">XQuery 1.0 and XPath 2.0 Functions and Operators</a>.
+</aside>
+<h1 id='list-functions'>List functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>list</code>s.</p>
+
+<aside class="notice">
+In FEEL, the index of the first element in a list is <code>1</code>. The index of
+the last element in a list can be identified as <code>-1</code>.
+</aside>
+<h2 id='list-contains-list-element'>list contains( list, element )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>list contains( [1,2,3], 2 ) = true
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>element</code></td>
+<td>Any type, including null</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the list contains the element.</p>
+<h2 id='count-list'>count( list )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>count( [1,2,3] ) = 3
+count( [] ) = 0
+count( [1,[2,3]] ) = 2
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Counts the elements in the list.</p>
+<h2 id='min-list'>min( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>min( e1, e2, ..., eN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>min( [1,2,3] ) = 1
+min( 1 ) = 1
+min( [1] ) = 1
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the minimum comparable element in the list.</p>
+<h2 id='max-list'>max( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>max( e1, e2, ..., eN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>max( 1,2,3 ) = 3
+max( [] ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the maximum comparable element in the list.</p>
+<h2 id='sum-list'>sum( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>sum( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>sum( [1,2,3] ) = 6
+sum( 1,2,3 ) = 6
+sum( 1 ) = 1
+sum( [] ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns the sum of the numbers in the list.</p>
+<h2 id='mean-list'>mean( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>mean( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>mean( [1,2,3] ) = 2
+mean( 1,2,3 ) = 2
+mean( 1 ) = 1
+mean( [] ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Calculates the average (arithmetic mean) of the elements in the
+list.</p>
+<h2 id='all-list'>all( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>all( b1, b2, ..., bN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>all( [false,null,true] ) = false
+all( true ) = true
+all( [true] ) = true
+all( [] ) = true
+all( 0 ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>boolean</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if all elements in the list are true.</p>
+<h2 id='any-list'>any( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>any( b1, b2, ..., bN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>any( [false,null,true] ) = true
+any( false ) = false
+any( [] ) = false
+any( 0 ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>boolean</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if any element in the list is true.</p>
+<h2 id='sublist-list-start-position-length'>sublist( list, start position, length? )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>sublist( [4,5,6], 1, 2 ) = [4,5]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>start position</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>length</code>      (Optional)</td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the sublist from the start position, limited to the length
+elements.</p>
+<h2 id='append-list-item'>append( list, item )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>append( [1], 2, 3 ) = [1,2,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>item</code></td>
+<td>Any type</td>
+</tr>
+</tbody></table>
+
+<p>Creates a list that is appended to the item or items.</p>
+<h2 id='concatenate-list'>concatenate( list )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>concatenate( [1,2],[3] ) = [1,2,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Creates a list that is the result of the concatenated lists.</p>
+<h2 id='insert-before-list-position-newitem'>insert before( list, position, newItem )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>insert before( [1,3],1,2 ) = [2,1,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>newItem</code></td>
+<td>Any type</td>
+</tr>
+</tbody></table>
+
+<p>Creates a list with the <code>newItem</code> inserted at the specified
+position.</p>
+<h2 id='remove-list-position'>remove( list, position )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>remove( [1,2,3], 2 ) = [1,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Creates a list with the removed element excluded from the specified
+position.</p>
+<h2 id='reverse-list'>reverse( list )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>reverse( [1,2,3] ) = [3,2,1]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a reversed list.</p>
+<h2 id='index-of-list-match'>index of( list, match )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>index of( [1,2,3,2],2 ) = [2,4]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>match</code></td>
+<td>Any type</td>
+</tr>
+</tbody></table>
+
+<p>Returns indexes matching the element.</p>
+<h2 id='union-list'>union( list )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>union( [1,2],[2,3] ) = [1,2,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a list of all the elements from multiple lists and excludes
+duplicates.</p>
+<h2 id='distinct-values-list'>distinct values( list )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>distinct values( [1,2,3,2,1] ) = [1,2,3]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a list of elements from a single list and excludes
+duplicates.</p>
+<h2 id='flatten-list'>flatten( list )</h2>
+<blockquote>
+<p>Examples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>flatten( [[1,2],[[3]], 4] ) = [1,2,3,4]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a flattened list.</p>
+<h2 id='product-list'>product( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>product( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>product( [2, 3, 4] ) = 24
+product( 2, 3, 4 ) = 24
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns the product of the numbers in the list.</p>
+<h2 id='median-list'>median( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>median( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>median( 8, 2, 5, 3, 4 ) = 4
+median( [6, 1, 2, 3] ) = 2.5
+median( [ ] ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns the median of the numbers in the list. If the number of
+elements is odd, the result is the middle element. If the number of
+elements is even, the result is the average of the two middle
+elements.</p>
+<h2 id='stddev-list'>stddev( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>stddev( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>stddev( 2, 4, 7, 5 ) = 2.081665999466132735282297706979931
+stddev( [47] ) = null
+stddev( 47 ) = null
+stddev( [ ] ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns the standard deviation of the numbers in the list.</p>
+<h2 id='mode-list'>mode( list )</h2>
+<blockquote>
+<p>Alternative signature: <code>mode( n1, n2, ..., nN )</code></p>
+
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>mode( 6, 3, 9, 6, 6 ) = [6]
+mode( [6, 1, 9, 6, 1] ) = [1, 6]
+mode( [ ] ) = [ ]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>number</code> elements</td>
+</tr>
+</tbody></table>
+
+<p>Returns the mode of the numbers in the list. If multiple elements
+are returned, the numbers are sorted in ascending order.</p>
+<h1 id='numeric-functions'>Numeric functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>number</code>s.</p>
+<h2 id='decimal-n-scale'>decimal( n, scale )</h2>
+<blockquote>
+<p>Examples: </p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>decimal( 1/3, 2 ) = .33
+decimal( 1.5, 0 ) = 2
+decimal( 2.5, 0 ) = 2
+decimal( 1.035, 2 ) = 1.04
+decimal( 1.045, 2 ) = 1.04
+decimal( 1.055, 2 ) = 1.06
+decimal( 1.065, 2 ) = 1.06
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>number</code> in the range <code>[−6111..6176]</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a number with the specified scale.</p>
+
+<aside class="notice">
+This function is implemented to be consistent with the
+<code>FEEL:number</code> definition for rounding decimal numbers to the
+nearest even decimal number.
+</aside>
+<h2 id='floor-n'>floor( n )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>floor( 1.5 ) = 1
+floor( -1.5 ) = -2
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the greatest integer that is less than or equal to the
+specified number.</p>
+<h2 id='ceiling-n'>ceiling( n )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>ceiling( 1.5 ) = 2
+ceiling( -1.5 ) = -1
+</code></pre></div>
+<p>Returns the smallest integer that is greater than or equal to the
+specified number.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='abs-n'>abs( n )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>abs( 10 ) = 10
+abs( -10 ) = 10
+abs( @"PT5H" ) = @"PT5H"
+abs( @"-PT5H" ) = @"PT5H"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code>, <code>days and time duration</code>, or  <code>years and months duration</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the absolute value.</p>
+<h2 id='modulo-dividend-divisor'>modulo( dividend, divisor )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>modulo( 12, 5 ) = 2
+modulo( -12,5 )= 3
+modulo( 12,-5 )= -3
+modulo( -12,-5 )= -2
+modulo( 10.1, 4.5 )= 1.1
+modulo( -10.1, 4.5 )= 3.4
+modulo( 10.1, -4.5 )= -3.4
+modulo( -10.1, -4.5 )= -1.1
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>dividend</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>divisor</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the remainder of the division of the dividend by the
+divisor. If either the dividend or divisor is negative, the result
+is of the same sign as the divisor.</p>
+
+<aside class="notice">
+This function is also expressed as
+<code>modulo(dividend, divisor) = dividend - divisor*floor(dividen/divisor)</code>.
+</aside>
+<h2 id='sqrt-number'>sqrt( number )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>sqrt( 16 ) = 4
+</code></pre></div>
+<p>Returns the square root of the specified number.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='log-number'>log( number )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>decimal( log( 10 ), 2 ) = 2.30
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the logarithm of the specified number.</p>
+<h2 id='exp-number'>exp( number )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>decimal( exp( 5 ), 2 ) = 148.41
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns Euler&#39;s number <code>e</code> raised to the power of the specified
+number.</p>
+<h2 id='odd-number'>odd( number )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>odd( 5 ) = true
+odd( 2 ) = false
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the specified number is odd.</p>
+<h2 id='even-number'>even( number )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>even( 5 ) = false
+even ( 2 ) = true
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if the specified number is even.</p>
+<h1 id='date-and-time-functions'>Date and time functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for temporal <code>date and time</code> comparisons.</p>
+<h2 id='is-value1-value2'>is( value1, value2 )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>is( date( "2012-12-25" ), time( "23:00:50" ) ) = false
+is( date( "2012-12-25" ), date( "2012-12-25" ) ) = true
+is( time( "23:00:50z" ), time( "23:00:50" ) ) = false
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>value1</code></td>
+<td>Any type</td>
+</tr>
+<tr>
+<td><code>value2</code></td>
+<td>Any type</td>
+</tr>
+</tbody></table>
+
+<p>Returns <code>true</code> if both values are the same element in the FEEL
+semantic domain.</p>
+<h1 id='range-functions'>Range functions</h1>
+<p>The following functions support temporal ordering operations to
+establish relationships between single scalar values and ranges of such
+values. These functions are similar to the components in the Health
+Level Seven (HL7) International <a href="https://cql.hl7.org/08-a-cqlsyntax.html">Clinical Quality Language (CQL) 1.4
+syntax</a>.</p>
+<h2 id='before'>before( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>before( 1, 10 ) = true
+before( 10, 1 ) = false
+before( 1, [1..10] ) = false
+before( 1, (1..10] ) = true
+before( 1, [5..10] ) = true
+before( [1..10], 10 ) = false
+before( [1..10), 10 ) = true
+before( [1..10], 15 ) = true
+before( [1..10], [15..20] ) = true
+before( [1..10], [10..20] ) = false
+before( [1..10), [10..20] ) = true
+before( [1..10], (10..20] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is before an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>before( point1 point2 )</code></p>
+
+<p>b.  <code>before( point, range )</code></p>
+
+<p>c.  <code>before( range, point )</code></p>
+
+<p>d.  <code>before( range1,range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>point1 &lt; point2</code></p>
+
+<p>b.  <code>point &lt; range.start or ( point = range.start and not(range.start included) )</code></p>
+
+<p>c.  <code>range.end &lt; point or ( range.end = point and not(range.end included) )</code></p>
+
+<p>d.  <code>range1.end &lt; range2.start or (( not(range1.end included) or not(range2.start included) ) and range1.end = range2.start )</code></p>
+<h2 id='after'>after( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>after( 10, 5 ) = true
+after( 5, 10 ) = false
+after( 12, [1..10] ) = true
+after( 10, [1..10) ) = true
+after( 10, [1..10] ) = false
+after( [11..20], 12 ) = false
+after( [11..20], 10 ) = true
+after( (11..20], 11 ) = true
+after( [11..20], 11 ) = false
+after( [11..20], [1..10] ) = true
+after( [1..10], [11..20] ) = false
+after( [11..20], [1..11) ) = true
+after( (11..20], [1..11] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is after an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>after( point1 point2 )</code></p>
+
+<p>b.  <code>after( point range )</code></p>
+
+<p>c.  <code>after( range, point )</code></p>
+
+<p>d.  <code>after( range1 range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>point1 &gt; point2</code></p>
+
+<p>b.  <code>point &gt; range.end or ( point = range.end and not(range.end included) )</code></p>
+
+<p>c.  <code>range.start &gt; point or ( range.start = point and not(range.start included) )</code></p>
+
+<p>d.  <code>range1.start &gt; range2.end or (( not(range1.start included) or not(range2.end included) ) and range1.start = range2.end )</code></p>
+<h2 id='meets'>meets( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>meets( [1..5], [5..10] ) = true
+meets( [1..5), [5..10] ) = false
+meets( [1..5], (5..10] ) = false
+meets( [1..5], [6..10] ) = false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> meets an element <code>B</code> and when the
+relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>meets( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range1.end included and range2.start included and range1.end = range2.start</code></p>
+<h2 id='met-by'>met by( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>met by( [5..10], [1..5] ) = true
+met by( [5..10], [1..5) ) = false
+met by( (5..10], [1..5] ) = false
+met by( [6..10], [1..5] ) = false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is met by an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>met by( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range1.start included and range2.end included and range1.start = range2.end</code></p>
+<h2 id='overlaps'>overlaps( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>overlaps( [1..5], [3..8] ) = true
+overlaps( [3..8], [1..5] ) = true
+overlaps( [1..8], [3..5] ) = true
+overlaps( [3..5], [1..8] ) = true
+overlaps( [1..5], [6..8] ) = false
+overlaps( [6..8], [1..5] ) = false
+overlaps( [1..5], [5..8] ) = true
+overlaps( [1..5], (5..8] ) = false
+overlaps( [1..5), [5..8] ) = false
+overlaps( [1..5), (5..8] ) = false
+overlaps( [5..8], [1..5] ) = true
+overlaps( (5..8], [1..5] ) = false
+overlaps( [5..8], [1..5) ) = false
+overlaps( (5..8], [1..5) ) = false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> overlaps an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>overlaps( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>( range1.end &gt; range2.start or (range1.end = range2.start and (range1.end included or range2.end included)) ) and ( range1.start &lt; range2.end or (range1.start = range2.end and range1.start included and range2.end included) )</code></p>
+<h2 id='overlaps-before'>overlaps before( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>overlaps before( [1..5], [3..8] ) = true
+overlaps before( [1..5], [6..8] ) = false
+overlaps before( [1..5], [5..8] ) = true
+overlaps before( [1..5], (5..8] ) = false
+overlaps before( [1..5), [5..8] ) = false
+overlaps before( [1..5), (1..5] ) = true
+overlaps before( [1..5], (1..5] ) = true
+overlaps before( [1..5), [1..5] ) = false
+overlaps before( [1..5], [1..5] ) = false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> overlaps before an element <code>B</code>
+and when the relevant requirements for evaluating to <code>true</code> are also
+met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>overlaps before( range1 range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>( range1.start &lt; range2.start or (range1.start = range2.start and range1.start included and range2.start included) ) and ( range1.end &gt; range2.start or (range1.end = range2.start and range1.end included and range2.start included) ) and ( range1.end &lt; range2.end or (range1.end = range2.end and (not(range1.end included) or range2.end included )) )</code></p>
+<h2 id='overlaps-after'>overlaps after( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>overlaps after( [3..8], [1..5] )= true
+overlaps after( [6..8], [1..5] )= false
+overlaps after( [5..8], [1..5] )= true
+overlaps after( (5..8], [1..5] )= false
+overlaps after( [5..8], [1..5) )= false
+overlaps after( (1..5], [1..5) )= true
+overlaps after( (1..5], [1..5] )= true
+overlaps after( [1..5], [1..5) )= false
+overlaps after( [1..5], [1..5] )= false
+overlaps after( (1..5), [1..5] )= false
+overlaps after( (1..5], [1..6] )= false
+overlaps after( (1..5], (1..5] )= false
+overlaps after( (1..5], [2..5] )= false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> overlaps after an element <code>B</code> and
+when the relevant requirements for evaluating to <code>true</code> are also
+met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>overlaps after( range1 range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>( range2.start &lt; range1.start or (range2.start = range1.start and range2.start included and not( range1.start included)) ) and ( range2.end &gt; range1.start or (range2.end = range1.start  and range2.end included and range1.start included) ) and ( range2.end &lt; range1.end or (range2.end = range1.end and (not(range2.end included) or range1.end included)) )</code></p>
+<h2 id='finishes'>finishes( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>finishes( 10, [1..10] ) = true
+finishes( 10, [1..10) ) = false
+finishes( [5..10], [1..10] ) = true
+finishes( [5..10), [1..10] ) = false
+finishes( [5..10), [1..10) ) = true
+finishes( [1..10], [1..10] ) = true
+finishes( (1..10], [1..10] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> finishes an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>finishes( point, range )</code></p>
+
+<p>b.  <code>finishes( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range.end included and range.end = point</code></p>
+
+<p>b.  <code>range1.end included = range2.end included and range1.end = range2.end and ( range1.start &gt; range2.start or (range1.start = range2.start and (not(range1.start included) or range2.start included)) )</code></p>
+<h2 id='finished-by'>finished by( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>finished by( [1..10], 10 ) = true
+finished by( [1..10), 10 ) = false
+finished by( [1..10], [5..10] ) = true
+finished by( [1..10], [5..10) ) = false
+finished by( [1..10), [5..10) ) = true
+finished by( [1..10], [1..10] ) = true
+finished by( [1..10], (1..10] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is finished by an element <code>B</code> and
+when the relevant requirements for evaluating to <code>true</code> are also
+met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>finished by( range, point )</code></p>
+
+<p>b.  <code>finished by( range1 range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range.end included and range.end = point</code></p>
+
+<p>b.  <code>range1.end included = range2.end included and range1.end = range2.end and ( range1.start &lt; range2.start or (range1.start = range2.start and (range1.start included or not(range2.start included))) )</code></p>
+<h2 id='includes'>includes( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>includes( [1..10], 5 ) = true
+includes( [1..10], 12 ) = false
+includes( [1..10], 1 ) = true
+includes( [1..10], 10 ) = true
+includes( (1..10], 1 ) = false
+includes( [1..10), 10 ) = false
+includes( [1..10], [4..6] ) = true
+includes( [1..10], [1..5] ) = true
+includes( (1..10], (1..5] ) = true
+includes( [1..10], (1..10) ) = true
+includes( [1..10), [5..10) ) = true
+includes( [1..10], [1..10) ) = true
+includes( [1..10], (1..10] ) = true
+includes( [1..10], [1..10] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> includes an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>includes( range, point )</code></p>
+
+<p>b.  <code>includes( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>(range.start &lt; point and range.end &gt; point) or (range.start = point and range.start included) or (range.end = point and range.end included)</code></p>
+
+<p>b.  <code>( range1.start &lt; range2.start or (range1.start = range2.start and (range1.start included or not(range2.start included))) ) and ( range1.end &gt; range2.end or (range1.end = range2.end and (range1.end included or not(range2.end included))) )</code></p>
+<h2 id='during'>during( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>during( 5, [1..10] ) = true
+during( 12, [1..10] ) = false
+during( 1, [1..10] ) = true
+during( 10, [1..10] ) = true
+during( 1, (1..10] ) = false
+during( 10, [1..10) ) = false
+during( [4..6], [1..10] ) = true
+during( [1..5], [1..10] ) = true
+during( (1..5], (1..10] ) = true
+during( (1..10), [1..10] ) = true
+during( [5..10), [1..10) ) = true
+during( [1..10), [1..10] ) = true
+during( (1..10], [1..10] ) = true
+during( [1..10], [1..10] ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is during an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>during( point, range )</code></p>
+
+<p>b.  <code>during( range1 range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>(range.start &lt; point and range.end &gt; point) or (range.start = point and range.start included) or (range.end = point and range.end included)</code></p>
+
+<p>b.  <code>( range2.start &lt; range1.start or (range2.start = range1.start and (range2.start included or not(range1.start included))) ) and ( range2.end &gt; range1.end or (range2.end = range1.end and (range2.end included or not(range1.end included))) )</code></p>
+<h2 id='starts'>starts( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>starts( 1, [1..10] ) = true
+starts( 1, (1..10] ) = false
+starts( 2, [1..10] ) = false
+starts( [1..5], [1..10] ) = true
+starts( (1..5], (1..10] ) = true
+starts( (1..5], [1..10] ) = false
+starts( [1..5], (1..10] ) = false
+starts( [1..10], [1..10] ) = true
+starts( [1..10), [1..10] ) = true
+starts( (1..10), (1..10) ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> starts an element <code>B</code> and when
+the relevant requirements for evaluating to <code>true</code> are also met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>starts( point, range )</code></p>
+
+<p>b.  <code>starts( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range.start = point and range.start included</code></p>
+
+<p>b.  <code>range1.start = range2.start and range1.start included = range2.start included and ( range1.end &lt; range2.end or (range1.end = range2.end and (not(range1.end included) or range2.end included)) )</code></p>
+<h2 id='started-by'>started by( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>started by( [1..10], 1 ) = true
+started by( (1..10], 1 ) = false
+started by( [1..10], 2 ) = false
+started by( [1..10], [1..5] ) = true
+started by( (1..10], (1..5] ) = true
+started by( [1..10], (1..5] ) = false
+started by( (1..10], [1..5] ) = false
+started by( [1..10], [1..10] ) = true
+started by( [1..10], [1..10) ) = true
+started by( (1..10), (1..10) ) = true
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> is started by an element <code>B</code> and
+when the relevant requirements for evaluating to <code>true</code> are also
+met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>started by( range, point )</code></p>
+
+<p>b.  <code>started by( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>range.start = point and range.start included</code></p>
+
+<p>b.  <code>range1.start = range2.start and range1.start included = range2.start included and ( range2.end &lt; range1.end or (range2.end = range1.end and (not(range2.end included) or range1.end included)) )</code></p>
+<h2 id='coincides'>coincides( )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>coincides( 5, 5 ) = true
+coincides( 3, 4 ) = false
+coincides( [1..5], [1..5] ) = true
+coincides( (1..5), [1..5] ) = false
+coincides( [1..5], [2..6] ) = false
+</code></pre></div>
+<p>Returns <code>true</code> when an element <code>A</code> coincides with an element <code>B</code> and
+when the relevant requirements for evaluating to <code>true</code> are also
+met.</p>
+
+<p>Signatures:</p>
+
+<p>a.  <code>coincides( point1, point2 )</code></p>
+
+<p>b.  <code>coincides( range1, range2 )</code></p>
+
+<p>Semantic:</p>
+
+<p>a.  <code>point1 = point2</code></p>
+
+<p>b.  <code>range1.start = range2.start and range1.start included = range2.start included and range1.end = range2.end and range1.end included = range2.end included</code></p>
+<h1 id='temporal-functions'>Temporal functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for temporal operations.</p>
+<h2 id='day-of-year-date'>day of year( date )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>day of year( date(2019, 9, 17) ) = 260
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the Gregorian number of the day of the year.</p>
+<h2 id='day-of-week-date'>day of week( date )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>day of week( date(2019, 9, 17) ) = "Tuesday"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the Gregorian day of the week: <code>&quot;Monday&quot;</code>, <code>&quot;Tuesday&quot;</code>,
+<code>&quot;Wednesday&quot;</code>, <code>&quot;Thursday&quot;</code>, <code>&quot;Friday&quot;</code>, <code>&quot;Saturday&quot;</code>, or
+<code>&quot;Sunday&quot;</code>.</p>
+<h2 id='month-of-year-date'>month of year( date )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>month of year( date(2019, 9, 17) ) = "September"
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the Gregorian month of the year: <code>&quot;January&quot;</code>, <code>&quot;February&quot;</code>,
+<code>&quot;March&quot;</code>, <code>&quot;April&quot;</code>, <code>&quot;May&quot;</code>, <code>&quot;June&quot;</code>, <code>&quot;July&quot;</code>, <code>&quot;August&quot;</code>,
+<code>&quot;September&quot;</code>, <code>&quot;October&quot;</code>, <code>&quot;November&quot;</code>, or <code>&quot;December&quot;</code>.</p>
+<h2 id='month-of-year-date-2'>month of year( date )</h2>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the Gregorian week of the year as defined by ISO 8601.</p>
+
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>week of year( date(2019, 9, 17) ) = 38
+week of year( date(2003, 12, 29) ) = 1
+week of year( date(2004, 1, 4) ) = 1
+week of year( date(2005, 1, 1) ) = 53
+week of year( date(2005, 1, 3) ) = 1
+week of year( date(2005, 1, 9) ) = 1
+</code></pre></div><h1 id='sort-functions'>Sort functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for sorting operations.</p>
+<h2 id='sort-list-precedes'>sort( list, precedes )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>sort( list: [3,1,4,5,2], precedes: function(x,y) x &lt; y ) = [1,2,3,4,5]
+</code></pre></div>
+<p>Returns a list of the same elements but ordered according to the
+sorting function.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><code>precedes</code></td>
+<td><code>function</code></td>
+</tr>
+</tbody></table>
+<h1 id='context-functions'>Context functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>context</code>s.</p>
+<h2 id='get-value-m-key'>get value( m, key )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get value( {key1 : "value1"}, "key1" ) = "value1"
+get value( {key1 : "value1"}, "unexistent-key" ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>m</code></td>
+<td><code>context</code></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the value from the context for the specified entry key.</p>
+<h2 id='get-entries-m'>get entries( m )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>get entries( {key1 : "value1", key2 : "value2"} ) =
+  [ { key : "key1", value : "value1" }, {key : "key2", value : "value2"} ]
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>m</code></td>
+<td><code>context</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a list of key-value pairs for the specified context.</p>
+<h1 id='conversion-functions'>Conversion functions</h1>
+<p>The following functions support conversion between values of different
+types. Some of these functions use specific string formats, such as the
+following examples:</p>
+
+<ul>
+<li><p><code>date string</code>: Follows the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#date">XML Schema Part 2:
+Datatypes</a> document, such
+as <code>2020-06-01</code></p></li>
+<li><p><code>time string</code>: Follows one of the following formats:</p>
+
+<ul>
+<li>  Format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#time">XML Schema Part 2:
+Datatypes</a> document,
+such as <code>23:59:00z</code></li>
+<li>  Format for a local time defined by ISO 8601 followed by <code>@</code> and
+an IANA Timezone, such as <code>00:01:00@Etc/UTC</code></li>
+</ul></li>
+<li><p><code>date time string</code>: Follows the format of a <code>date string</code> followed
+by <code>T</code> and a <code>time string</code>, such as <code>2012-12-25T11:00:00Z</code></p></li>
+<li><p><code>duration string</code>: Follows the format of <code>days and time duration</code>
+and <code>years and months duration</code> defined in the <a href="https://www.w3.org/TR/xpath-datamodel/#types">XQuery 1.0 and XPath
+2.0 Data Model</a>, such
+as <code>P1Y2M</code></p></li>
+</ul>
+<h2 id='date-from-string'>date( from: string )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date( "2012-12-25" ) - date( "2012-12-24" ) = duration( "P1D" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td><code>date string</code></td>
+</tr>
+</tbody></table>
+
+<p>Converts <code>from</code> to a <code>date</code> value.</p>
+<h2 id='date-from-date-and-time'>date( from: date and time )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date(date and time( "2012-12-25T11:00:00Z" )) = date( "2012-12-25" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Converts <code>from</code> to a <code>date</code> value and sets time components to null.</p>
+<h2 id='date-year-month-day'>date( year, month, day )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date( 2012, 12, 25 ) = date( "2012-12-25" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>year</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+
+<p>Produces a <code>date</code> from the specified year, month, and day values.</p>
+<h2 id='date-and-time-date-time'>date and time( date, time )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date and time ( "2012-12-24T23:59:00" ) = date and time(date( "2012-12-24" ), time( "23:59:00" ))
+</code></pre></div>
+<p>Produces a <code>date and time</code> from the specified date and ignores any
+time components and the specified time.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>date</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td><code>time</code></td>
+</tr>
+</tbody></table>
+<h2 id='date-and-time-from'>date and time( from )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date and time( "2012-12-24T23:59:00" ) + duration( "PT1M" ) = date and time( "2012-12-25T00:00:00" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td><code>date time string</code></td>
+</tr>
+</tbody></table>
+
+<p>Produces a <code>date and time</code> from the specified string.</p>
+<h2 id='time-from-string'>time( from: string )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>time( "23:59:00z" ) + duration( "PT2M" ) = time( "00:01:00@Etc/UTC" )
+</code></pre></div>
+<p>Produces a <code>time</code> from the specified string.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td><code>time string</code></td>
+</tr>
+</tbody></table>
+<h2 id='time-from-date-and-time'>time( from: date and time )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>time(date and time( "2012-12-25T11:00:00Z" )) = time( "11:00:00Z" )
+</code></pre></div>
+<p>Produces a <code>time</code> from the specified parameter and ignores any date
+components.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>time</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+<h2 id='time-hour-minute-second-offset'>time( hour, minute, second, offset? )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>time( "23:59:00z" ) = time(23, 59, 0, duration( "PT0H" ))
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>hour</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>minute</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>second</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>offset</code>     (Optional)</td>
+<td><code>days and time duration</code> or null</td>
+</tr>
+</tbody></table>
+
+<p>Produces a <code>time</code> from the specified hour, minute, and second
+component values.</p>
+<h2 id='number-from-grouping-separator-decimal-separator'>number( from, grouping separator, decimal separator )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>number( "1 000,0", " ", "," ) = number( "1,000.0", ",", "." )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>string</code> representing a valid number</td>
+</tr>
+<tr>
+<td><code>grouping separator</code></td>
+<td>Space (<code></code>), comma (<code>,</code>), period (<code>.</code>), or null</td>
+</tr>
+<tr>
+<td><code>decimal separator</code></td>
+<td>Same types as <code>grouping separator</code>, but the values cannot match</td>
+</tr>
+</tbody></table>
+
+<p>Converts <code>from</code> to a <code>number</code> using the specified separators.</p>
+<h2 id='string-from'>string( from )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>string( 1.1 ) = "1.1"
+string( null ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td>Non-null value</td>
+</tr>
+</tbody></table>
+
+<p>Provides a string representation of the specified parameter.</p>
+<h2 id='duration-from'>duration( from )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date and time( "2012-12-24T23:59:00" ) - date and time( "2012-12-22T03:45:00" ) = duration( "P2DT20H14M" )
+duration( "P2Y2M" ) = duration( "P26M" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Format</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td><code>duration string</code></td>
+</tr>
+</tbody></table>
+
+<p>Converts <code>from</code> to a <code>days and time duration</code> value or
+<code>years and months duration</code> value.</p>
+<h2 id='years-and-months-duration-from-to'>years and months duration( from, to )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>years and months duration( date( "2011-12-22" ), date( "2013-08-24" ) ) = duration( "P1Y8M" )
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>from</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>date</code> or <code>date and time</code></td>
+</tr>
+</tbody></table>
+
+<p>Calculates the <code>years and months duration</code> between the two specified
+parameters.</p>
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-          </div>
       </div>
     </div>
   </body>
