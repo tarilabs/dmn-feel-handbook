@@ -288,7 +288,7 @@
     </style>
     <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all-b12a2749.js"></script>
+      <script src="javascripts/all_nosearch-18c3ed8e.js"></script>
 
     <script>
       $(function() { setupCodeCopy(); });
@@ -304,10 +304,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo-a56c74fb.png" class="logo" alt="" />
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#dmn-feel-handbook" class="toc-h1 toc-link" data-title="DMN FEEL handbook">DMN FEEL handbook</a>
@@ -358,6 +354,12 @@
                   </li>
                   <li>
                     <a href="#split-string-delimiter" class="toc-h2 toc-link" data-title="split( string, delimiter )">split( string, delimiter )</a>
+                  </li>
+                  <li>
+                    <a href="#string-join-list-delimiter" class="toc-h2 toc-link" data-title="string join( list, delimiter )">string join( list, delimiter )</a>
+                  </li>
+                  <li>
+                    <a href="#string-join-list" class="toc-h2 toc-link" data-title="string join( list )">string join( list )</a>
                   </li>
               </ul>
           </li>
@@ -443,6 +445,18 @@
                   </li>
                   <li>
                     <a href="#ceiling-n" class="toc-h2 toc-link" data-title="ceiling( n )">ceiling( n )</a>
+                  </li>
+                  <li>
+                    <a href="#round-up-n-scale" class="toc-h2 toc-link" data-title="round up( n, scale )">round up( n, scale )</a>
+                  </li>
+                  <li>
+                    <a href="#round-down-n-scale" class="toc-h2 toc-link" data-title="round down( n, scale )">round down( n, scale )</a>
+                  </li>
+                  <li>
+                    <a href="#round-half-up-n-scale" class="toc-h2 toc-link" data-title="round half up( n, scale )">round half up( n, scale )</a>
+                  </li>
+                  <li>
+                    <a href="#round-hald-down-n-scale" class="toc-h2 toc-link" data-title="round hald down( n, scale )">round hald down( n, scale )</a>
                   </li>
                   <li>
                     <a href="#abs-n" class="toc-h2 toc-link" data-title="abs( n )">abs( n )</a>
@@ -556,6 +570,18 @@
                   <li>
                     <a href="#get-entries-m" class="toc-h2 toc-link" data-title="get entries( m )">get entries( m )</a>
                   </li>
+                  <li>
+                    <a href="#context-entries" class="toc-h2 toc-link" data-title="context( entries )">context( entries )</a>
+                  </li>
+                  <li>
+                    <a href="#context-put-context-key-value" class="toc-h2 toc-link" data-title="context put( context, key, value )">context put( context, key, value )</a>
+                  </li>
+                  <li>
+                    <a href="#context-put-context-keys-value" class="toc-h2 toc-link" data-title="context put( context, keys, value )">context put( context, keys, value )</a>
+                  </li>
+                  <li>
+                    <a href="#context-merge-contexts" class="toc-h2 toc-link" data-title="context merge( contexts )">context merge( contexts )</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -599,6 +625,25 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#miscellaneous-functions" class="toc-h1 toc-link" data-title="Miscellaneous functions">Miscellaneous functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#now" class="toc-h2 toc-link" data-title="now()">now()</a>
+                  </li>
+                  <li>
+                    <a href="#today" class="toc-h2 toc-link" data-title="today()">today()</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#kie-extended-functions" class="toc-h1 toc-link" data-title="KIE Extended functions">KIE Extended functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#invoke-namespace-modelname-decisionname-parameters" class="toc-h2 toc-link" data-title="invoke( namespace, modelName, decisionName, parameters )">invoke( namespace, modelName, decisionName, parameters )</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
         <ul class="toc-footer">
             <li>Refer to the <a href='https://www.drools.org/learn/documentation.html'>full Drools doc (here)</a>.</li>
@@ -610,7 +655,7 @@
         <h1 id='dmn-feel-handbook'>DMN FEEL handbook</h1>
 <p>This is a vademecum for the FEEL expression language from the DMN specification, as also implemented by the Drools DMN open source engine.</p>
 
-<p>This is not intented as an exahustive documentation of the DMN capabilities of Drools; this is intended as a handy a pocket reference for FEEL usage.
+<p>This is not intented as an exahustive documentation of the <a href='https://www.drools.org/learn/dmn.html'>DMN capabilities of Drools</a>; this is intended as a handy a pocket reference for FEEL usage.
 You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
 <h1 id='boolean-functions'>Boolean functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for <code>boolean</code>s.</p>
@@ -785,7 +830,8 @@ substring after( "", "a" ) = ""
 <blockquote>
 <p>Examples: </p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>replace( "abcd", "(ab)|(a)", "[1=$1][2=$2]" ) = "[1=ab][2=]cd"
+<div class="highlight"><pre class="highlight plaintext"><code>replace( "banana", "a", "o" ) = "bonono"
+replace( "abcd", "(ab)|(a)", "[1=$1][2=$2]" ) = "[1=ab][2=]cd"
 </code></pre></div>
 <table><thead>
 <tr>
@@ -948,6 +994,64 @@ regular expression pattern.</p>
 This function uses regular expression parameters as defined in
 <a href="https://www.w3.org/TR/xquery-operators/#regex-syntax">XQuery 1.0 and XPath 2.0 Functions and Operators</a>.
 </aside>
+<h2 id='string-join-list-delimiter'>string join( list, delimiter )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>string join(["a","b","c"], "_and_") = "a_and_b_and_c"
+string join(["a","b","c"], "") = "abc"
+string join(["a","b","c"], null) = "abc"
+string join(["a"], "X") = "a"
+string join(["a",null,"c"], "X") = "aXc"
+string join([], "X") = ""
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>string</code></td>
+</tr>
+<tr>
+<td><code>delimiter</code></td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a string which is composed by joining all the string elements from the list parameter, separated by the delimiter.
+The <code>delimiter</code> can be an empty string.
+Null elements in the list parameter are ignored.
+If <code>list</code> is empty, the result is the empty string.
+If <code>delimiter</code> is null, the string elements are joined without a separator.</p>
+<h2 id='string-join-list'>string join( list )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>string join(["a","b","c"], "_and_") = "a_and_b_and_c"
+string join(["a","b","c"], "") = "abc"
+string join(["a","b","c"], null) = "abc"
+string join(["a"], "X") = "a"
+string join(["a",null,"c"], "X") = "aXc"
+string join([], "X") = ""
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>list</code></td>
+<td><code>list</code> of <code>string</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a string which is composed by joining all the string elements from the list parameter.
+Null elements in the <code>list</code> parameter are ignored.
+If <code>list</code> is empty, the result is the empty string.</p>
 <h1 id='list-functions'>List functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for <code>list</code>s.</p>
 
@@ -1372,6 +1476,7 @@ duplicates.</p>
 <p>Examples:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>product( [2, 3, 4] ) = 24
+product( [] ) = null
 product( 2, 3, 4 ) = 24
 </code></pre></div>
 <table><thead>
@@ -1500,9 +1605,12 @@ nearest even decimal number.
 </aside>
 <h2 id='floor-n'>floor( n )</h2>
 <blockquote>
+<p>Alternative signature: <code>floor( n, scale )</code></p>
+
 <p>Examples:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>floor( 1.5 ) = 1
+floor( -1.56, 1 ) = -1.6
 floor( -1.5 ) = -2
 </code></pre></div>
 <table><thead>
@@ -1517,17 +1625,20 @@ floor( -1.5 ) = -2
 </tr>
 </tbody></table>
 
-<p>Returns the greatest integer that is less than or equal to the
-specified number.</p>
+<p>Returns <code>n</code> with given scale and rounding mode <em>flooring</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
 <h2 id='ceiling-n'>ceiling( n )</h2>
 <blockquote>
+<p>Alternative signature: <code>ceiling( n, scale )</code></p>
+
 <p>Examples:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight plaintext"><code>ceiling( 1.5 ) = 2
+ceiling( -1.56, 1 ) = -1.5
 ceiling( -1.5 ) = -1
 </code></pre></div>
-<p>Returns the smallest integer that is greater than or equal to the
-specified number.</p>
+<p>Returns <code>n</code> with given scale and rounding mode <em>ceiling</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
 
 <table><thead>
 <tr>
@@ -1537,6 +1648,114 @@ specified number.</p>
 </thead><tbody>
 <tr>
 <td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='round-up-n-scale'>round up( n, scale )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>round up( 5.5, 0 ) = 6 
+round up( -5.5, 0 ) = -6 
+round up( 1.121, 2 ) = 1.13
+round up( -1.126, 2 ) = -1.13
+</code></pre></div>
+<p>Returns <code>n</code> with given scale and rounding mode <em>round up</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='round-down-n-scale'>round down( n, scale )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>round down( 5.5, 0 ) = 5 
+round down( -5.5, 0 ) = -5 
+round down( 1.121, 2 ) = 1.12
+round down( -1.126, 2 ) = -1.12
+</code></pre></div>
+<p>Returns <code>n</code> with given scale and rounding mode <em>round down</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='round-half-up-n-scale'>round half up( n, scale )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>round half up( 5.5, 0 ) = 6 
+round half up( -5.5, 0 ) = -6 
+round half up( 1.121, 2 ) = 1.12
+round half up( -1.126, 2 ) = -1.13
+</code></pre></div>
+<p>Returns <code>n</code> with given scale and rounding mode <em>round half up</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+<h2 id='round-hald-down-n-scale'>round hald down( n, scale )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>round half down( 5.5, 0 ) = 5 
+round half down( -5.5, 0 ) = -5 
+round half down( 1.121, 2 ) = 1.12
+round half down( -1.126, 2 ) = -1.13
+</code></pre></div>
+<p>Returns <code>n</code> with given scale and rounding mode <em>round half down</em>.
+If at least one of <code>n</code> or <code>scale</code> is null, the result is null.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>n</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
 <td><code>number</code></td>
 </tr>
 </tbody></table>
@@ -1706,6 +1925,7 @@ even ( 2 ) = true
 <div class="highlight"><pre class="highlight plaintext"><code>is( date( "2012-12-25" ), time( "23:00:50" ) ) = false
 is( date( "2012-12-25" ), date( "2012-12-25" ) ) = true
 is( time( "23:00:50z" ), time( "23:00:50" ) ) = false
+is( time( "23:00:50z" ), time( "23:00:50+00:00" ) ) = true
 </code></pre></div>
 <table><thead>
 <tr>
@@ -1876,7 +2096,7 @@ the relevant requirements for evaluating to <code>true</code> are also met.</p>
 
 <p>Semantic:</p>
 
-<p>a.  <code>( range1.end &gt; range2.start or (range1.end = range2.start and (range1.end included or range2.end included)) ) and ( range1.start &lt; range2.end or (range1.start = range2.end and range1.start included and range2.end included) )</code></p>
+<p>a. <code>( range1.end &gt; range2.start or (range1.end = range2.start and range1.end included and range2.end included) ) and ( range1.start &lt; range2.end or (range1.start = range2.end and range1.start included and range2.end included) )</code></p>
 <h2 id='overlaps-before'>overlaps before( )</h2>
 <blockquote>
 <p>Examples:</p>
@@ -1901,7 +2121,7 @@ met.</p>
 
 <p>Semantic:</p>
 
-<p>a.  <code>( range1.start &lt; range2.start or (range1.start = range2.start and range1.start included and range2.start included) ) and ( range1.end &gt; range2.start or (range1.end = range2.start and range1.end included and range2.start included) ) and ( range1.end &lt; range2.end or (range1.end = range2.end and (not(range1.end included) or range2.end included )) )</code></p>
+<p>a. <code>( range1.start &lt; range2.start or (range1.start = range2.start and range1.start included and not(range2.start included)) ) and ( range1.end &gt; range2.start or (range1.end = range2.start and range1.end included and range2.start included) ) and ( range1.end &lt; range2.end or (range1.end = range2.end and (not(range1.end included) or range2.end included )) )</code></p>
 <h2 id='overlaps-after'>overlaps after( )</h2>
 <blockquote>
 <p>Examples:</p>
@@ -2293,6 +2513,123 @@ get value( {key1 : "value1"}, "unexistent-key" ) = null
 </tbody></table>
 
 <p>Returns a list of key-value pairs for the specified context.</p>
+<h2 id='context-entries'>context( entries )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>context([{key:"a", value:1}, {key:"b", value:2}]) = {a:1, b:2}
+context([{key:"a", value:1}, {key:"b", value:2, something: "else"}]) = {a:1, b:2}
+context([{key:"a", value:1}, {key:"b"}]) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>entries</code></td>
+<td><code>list</code> of <code>context</code> , each item SHALL have two entries having keys named &quot;key&quot; and &quot;value&quot; respectively</td>
+</tr>
+</tbody></table>
+
+<p>Returns a new context that includes all specified entries.
+If a context item contains additional entries beyond the required &quot;key&quot; and &quot;value&quot; entries, the additional entries are ignored.
+If a context item is missing the required &quot;key&quot; and &quot;value&quot; entries, the final result is null.
+See also: get entries() built-in function.</p>
+<h2 id='context-put-context-key-value'>context put( context, key, value )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>context put({x:1}, "y", 2) = {x:1, y:2}
+context put({x:1, y:0}, "y", 2) = {x:1, y:2}
+context put({x:1, y:0, z:0}, "y", 2) = {x:1, y:2, z:0}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>context</code></td>
+<td><code>context</code></td>
+</tr>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>Any</code> type</td>
+</tr>
+</tbody></table>
+
+<p>Returns a new context that includes the new entry, or overrides the existing value if an entry for the same key already exists in the supplied context parameter.
+A new entry is added as the last entry of the new context.
+If overriding an existing entry, the order of the keys maintains the same order as in the original context.</p>
+<h2 id='context-put-context-keys-value'>context put( context, keys, value )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>context put({x:1}, ["y"], 2) = context put({x:1}, "y", 2)
+context put({x:1}, ["y"], 2) = {x:1, y:2}
+context put({x:1, y: {a: 0} }, ["y", "a"], 2) = context put({x:1, y: {a: 0} }, "y", context put({a: 0}, ["a"], 2))
+context put({x:1, y: {a: 0} }, ["y", "a"], 2) = {x:1, y: {a: 2} }
+context put({x:1, y: {a: 0} }, [], 2) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>context</code></td>
+<td><code>context</code></td>
+</tr>
+<tr>
+<td><code>keys</code></td>
+<td><code>list</code> of <code>string</code></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>Any</code> type</td>
+</tr>
+</tbody></table>
+
+<p>Returns the composite of nested invocations to <code>context put()</code> for each item in <code>keys</code> hierarchy in context.</p>
+
+<p>If <code>keys</code> is a list of 1 element, this is equivalent to <code>context put(context, key&#39;, value)</code>, where <code>key&#39;</code> is the only element in the list keys.</p>
+
+<p>If <code>keys</code> is a list of 2 or more elements, this is equivalent of calling <code>context put(context, key&#39;, value&#39;)</code>, with: <br/>
+<code>key&#39;</code> is the head element in the list keys, <br/>
+<code>value&#39;</code> is the result of invocation of <code>context put(context&#39;, keys&#39;, value)</code>, where: <br/>
+<code>context&#39;</code> is the result of <code>context.key&#39;</code>, <br/>
+<code>keys&#39;</code> is the remainder of the list keys without the head element <code>key&#39;</code>.</p>
+
+<p>If <code>keys</code> is an empty list or null, the result is null.</p>
+<h2 id='context-merge-contexts'>context merge( contexts )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>context merge([{x:1}, {y:2}]) = {x:1, y:2}
+context merge([{x:1, y:0}, {y:2}]) = {x:1, y:2}
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>contexts</code></td>
+<td><code>list</code> of <code>context</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns a new context that includes all entries from the given contexts; if some of the keys are equal, the entries are overridden.
+The entries are overridden in the same order as specified by the supplied parameter, with new entries added as the last entry in the new context.</p>
 <h1 id='conversion-functions'>Conversion functions</h1>
 <p>The following functions support conversion between values of different
 types. Some of these functions use specific string formats, such as the
@@ -2597,6 +2934,68 @@ duration( "P2Y2M" ) = duration( "P26M" )
 
 <p>Calculates the <code>years and months duration</code> between the two specified
 parameters.</p>
+<h1 id='miscellaneous-functions'>Miscellaneous functions</h1>
+<p>These functions provide support utilities for several miscellaneous use-cases.
+For example, when a decision depends on the current date, like deciding the support SLA over the weekends, additional charges for weekend delivery, etc.</p>
+
+<p>It is important to note that the functions in this section are intended to be side-effect-free, but they are not deterministic and not idempotent from the perspective of an external observer.</p>
+
+<p>As a user, you are encouraged to isolate the decision logic that uses these functions in specific DRG elements, such as Decisions.
+The encapsulation enables them to be overridden with synthetic values during scenario testing, that remain constant across executions of the DMN model&#39;s test cases.</p>
+<h2 id='now'>now()</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>now()
+</code></pre></div>
+<p>Returns the current <code>date and time</code>.</p>
+<h2 id='today'>today()</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>today()
+</code></pre></div>
+<p>Returns the current <code>date</code>.</p>
+<h1 id='kie-extended-functions'>KIE Extended functions</h1>
+<p>These functions are provided as an extension to the DMN Standard to enable support for various use-cases on top of the <a href='https://www.drools.org/learn/dmn.html'>Drools DMN Engine</a>.</p>
+<h2 id='invoke-namespace-modelname-decisionname-parameters'>invoke( namespace, modelName, decisionName, parameters )</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>invoke(
+    "http://namespace_of_model",
+    "my model name",
+    "my decision name",
+    { a:1, b:2 }
+)
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>namespace</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>modelName</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>decisionName</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td><code>context</code></td>
+</tr>
+</tbody></table>
+
+<p>Returns the result of the decision evaluation in the specified DMN model available to the <code>DMNRuntime</code> environment in the current DMN model is executed.</p>
+
+<p>This function is <em>deprecated</em> in favor of encouraging the usage of DMN Standard capabilities wherever possible; since DMNv1.2 it shall be possible to use the DMN standard&#39;s <em>Import</em> functionality to import Business Knowledge Model (BKM) nodes and Decision Service nodes, to be invoked from another model.</p>
 
       </div>
       <div class="dark-box">
