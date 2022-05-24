@@ -309,6 +309,47 @@
             <a href="#dmn-feel-handbook" class="toc-h1 toc-link" data-title="DMN FEEL handbook">DMN FEEL handbook</a>
           </li>
           <li>
+            <a href="#feel-values" class="toc-h1 toc-link" data-title="FEEL values">FEEL values</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#number" class="toc-h2 toc-link" data-title="number">number</a>
+                  </li>
+                  <li>
+                    <a href="#string" class="toc-h2 toc-link" data-title="string">string</a>
+                  </li>
+                  <li>
+                    <a href="#boolean" class="toc-h2 toc-link" data-title="boolean">boolean</a>
+                  </li>
+                  <li>
+                    <a href="#date" class="toc-h2 toc-link" data-title="date">date</a>
+                  </li>
+                  <li>
+                    <a href="#time" class="toc-h2 toc-link" data-title="time">time</a>
+                  </li>
+                  <li>
+                    <a href="#date-and-time" class="toc-h2 toc-link" data-title="date and time">date and time</a>
+                  </li>
+                  <li>
+                    <a href="#days-and-time-duration" class="toc-h2 toc-link" data-title="days and time duration">days and time duration</a>
+                  </li>
+                  <li>
+                    <a href="#years-and-month-duration" class="toc-h2 toc-link" data-title="years and month duration">years and month duration</a>
+                  </li>
+                  <li>
+                    <a href="#function" class="toc-h2 toc-link" data-title="function">function</a>
+                  </li>
+                  <li>
+                    <a href="#context" class="toc-h2 toc-link" data-title="context">context</a>
+                  </li>
+                  <li>
+                    <a href="#range-or-interval" class="toc-h2 toc-link" data-title="range (or interval)">range (or interval)</a>
+                  </li>
+                  <li>
+                    <a href="#list" class="toc-h2 toc-link" data-title="list">list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#string-functions" class="toc-h1 toc-link" data-title="String functions">String functions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -658,6 +699,209 @@
 <p>This is not intented as an exahustive documentation of the DMN capabilities of Drools; this is intended as a handy a pocket reference for FEEL usage, a FEEL pocket guide, a FEEL reference, a FEEL quick reference, a FEEL cheatsheet,<br/><strong>a FEEL handbook</strong>.</p>
 
 <p>You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
+
+<p>The FEEL (Friendly Enough Expression Language) is intended as a common ground between business analysts, programmers, domain experts and stakeholders.</p>
+
+<p>The FEEL language design include the following features:</p>
+
+<ul>
+<li>Side-effect free</li>
+<li>Simple data model with numbers, dates, strings, lists, and contexts</li>
+<li>Simple syntax designed for a broad audience</li>
+<li>Three-valued logic (<code>true</code>, <code>false</code>, <code>null</code>)</li>
+</ul>
+
+<p>The following sections presents basic FEEL syntax. You can refer to the other sections for details of the built-in and extended FEEL functions.</p>
+<h1 id='feel-values'>FEEL values</h1>
+<p>FEEL: supports the following data types:</p>
+
+<ul>
+<li>Numbers</li>
+<li>Strings</li>
+<li>Boolean values</li>
+<li>Dates</li>
+<li>Time</li>
+<li>Date and time</li>
+<li>Days and time duration</li>
+<li>Years and months duration</li>
+<li>Functions</li>
+<li>Contexts</li>
+<li>Ranges (or intervals)</li>
+<li>Lists</li>
+</ul>
+<h2 id='number'>number</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>47
+-9.123
+1.2*10**3 // expression resulting in 1.2e3
+</code></pre></div>
+<p>Numbers in FEEL are based on the <a href="http://ieeexplore.ieee.org/document/4610935/">IEEE 754-2008</a> Decimal 128 format, with 34 digits of precision. Internally, numbers are represented in Java as <code>BigDecimals</code> with <code>MathContext DECIMAL128</code>. FEEL supports only one number data type, so the same type is used to represent both integers and floating point numbers.</p>
+
+<p>FEEL numbers use a dot (<code>.</code>) as a decimal separator. FEEL does not support <code>-INF</code>, <code>+INF</code>, or <code>NaN</code>. FEEL uses <code>null</code> to represent invalid numbers.</p>
+
+<p>FEEL specification does not support a literal scientific notation. E.g., <code>1.2e3</code> is not valid FEEL syntax. You can use <code>1.2*10**3</code> instead.</p>
+
+<p>Drools extends the DMN specification and supports additional number notations:</p>
+
+<ul>
+<li><strong>Scientific</strong>: You can use scientific notation with the suffix <code>e&lt;exp&gt;</code> or <code>E&lt;exp&gt;</code>. For example, <code>1.2e3</code> is the same as writing the expression <code>1.2*10**3</code>, but is a literal instead of an expression.</li>
+<li><strong>Hexadecimal</strong>: You can use hexadecimal numbers with the prefix <code>0x</code>. For example, <code>0xff</code> is the same as the decimal number <code>255</code>. Both uppercase and lowercase letters are supported. For example, <code>0XFF</code> is the same as <code>0xff</code>.</li>
+<li><strong>Type suffixes</strong>: You can use the type suffixes <code>f</code>, <code>F</code>, <code>d</code>, <code>D</code>, <code>l</code>, and <code>L</code>. These suffixes are ignored.</li>
+</ul>
+<h2 id='string'>string</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>"John Doe"
+</code></pre></div>
+<p>Strings in FEEL are any sequence of characters delimited by double quotation marks.</p>
+<h2 id='boolean'>boolean</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>true
+</code></pre></div>
+<p>FEEL uses three-valued boolean logic, so a boolean logic expression may have values <code>true</code>, <code>false</code>, or <code>null</code>.</p>
+<h2 id='date'>date</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date( "2017-06-23" )
+</code></pre></div>
+<p>Date literals are not supported in FEEL, but you can use the built-in <code>date()</code> function to construct date values.
+Date strings in FEEL follow the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#date">XML Schema Part 2: Datatypes</a> document.
+The format is <code>&quot;YYYY-MM-DD&quot;</code> where <code>YYYY</code> is the year with four digits, <code>MM</code> is the number of the month with two digits, and <code>DD</code> is the number of the day.</p>
+
+<p>Date objects have time equal to <code>&quot;00:00:00&quot;</code>, which is midnight. The dates are considered to be local, without a timezone.</p>
+<h2 id='time'>time</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>time( "04:25:12" )
+time( "14:10:00+02:00" )
+time( "22:35:40.345-05:00" )
+time( "15:00:30z" )
+time( "09:30:00@Europe/Rome" )
+</code></pre></div>
+<p>Time literals are not supported in FEEL, but you can use the built-in <code>time()</code> function to construct date values.
+Time strings in FEEL follow the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#time">XML Schema Part 2: Datatypes</a> document.
+The format is <code>&quot;hh:mm:ss[.uuu][(+-)hh:mm]&quot;</code> where <code>hh</code> is the hour of the day (from <code>00</code> to <code>23</code>), <code>mm</code> is the minutes in the hour, and <code>ss</code> is the number of seconds in the minute. Optionally, the string may define the number of milliseconds (<code>uuu</code>) within the second and contain a positive (<code>+</code>) or negative (<code>-</code>) offset from UTC time to define its timezone.
+Instead of using an offset, you can use the letter <code>z</code> to represent the UTC time, which is the same as an offset of <code>-00:00</code>.
+Instead of using an offset, you can also use the symbol <code>@</code> followed by a IANA timezone.
+If no offset is defined, the time is considered to be local.</p>
+
+<p>Time values that define an offset or a timezone cannot be compared to local times that do not define an offset or a timezone.</p>
+<h2 id='date-and-time'>date and time</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>date and time( "2017-10-22T23:59:00" )
+date and time( "2017-06-13T14:10:00+02:00" )
+date and time( "2017-02-05T22:35:40.345-05:00" )
+date and time( "2017-06-13T15:00:30z" )
+date and time( "2017-06-13T09:30:00@Europe/Rome" )
+</code></pre></div>
+<p>Date and time literals are not supported in FEEL, but you can use the built-in <code>date and time()</code> function to construct <code>date and time</code> values.
+Date and time strings in FEEL follow the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#dateTime">XML Schema Part 2: Datatypes</a> document.
+The format is <code>&quot;&lt;date&gt;T&lt;time&gt;&quot;</code>, where <code>&lt;date&gt;</code> and <code>&lt;time&gt;</code> follow the prescribed XML schema formatting, conjoined by <code>T</code>.</p>
+<h2 id='days-and-time-duration'>days and time duration</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>duration( "P1DT23H12M30S" )
+duration( "P23D" )
+duration( "PT12H" )
+duration( "PT35M" )
+</code></pre></div>
+<p>Days and time duration literals are not supported in FEEL, but you can use the built-in <code>duration()</code> function to construct <code>days and time duration</code> values.
+Days and time duration strings in FEEL follow the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#duration">XML Schema Part 2: Datatypes</a> document, but are restricted to only days, hours, minutes and seconds. Months and years are not supported.</p>
+<h2 id='years-and-month-duration'>years and month duration</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>duration( "P3Y5M" )
+duration( "P2Y" )
+duration( "P10M" )
+duration( "P25M" )
+</code></pre></div>
+<p>Years and time duration literals are not supported in FEEL, but you can use the built-in <code>duration()</code> function to construct <code>years and month duration</code> values.
+Days and time duration strings in FEEL follow the format defined in the <a href="https://www.w3.org/TR/xmlschema-2/#duration">XML Schema Part 2: Datatypes</a> document, but are restricted to only years and months. Days, hours, minutes, or seconds are not supported.</p>
+<h2 id='function'>function</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>function(a, b) a + b
+</code></pre></div>
+<p>FEEL has function literals (or anonymous functions, lambda functions) that you can use to create functions. </p>
+
+<p>In the example, the FEEL expression creates a function that adds the parameters a and b and returns the result.</p>
+<h2 id='context'>context</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>{ x : 5, y : 3 }
+</code></pre></div>
+<p>FEEL has <code>context</code> literals that you can use to create contexts. A <code>context</code> in FEEL is a list of key and value pairs, similar to maps in languages like Java.</p>
+
+<p>In the example, the expression creates a context with two entries, <code>x</code> and <code>y</code>, representing a coordinate in a chart.</p>
+
+<p>In DMN 1.2, another way to create contexts is to create an item definition that contains the list of keys as attributes, and then declare the variable as having that item definition type.</p>
+
+<p>The Drools DMN API supports DMN <code>ItemDefinition</code> structural types in a <code>DMNContext</code> represented in two ways:</p>
+
+<ul>
+<li><p>User-defined Java type: Must be a valid JavaBeans object defining properties and getters for each of the components in the DMN <code>ItemDefinition</code>. If necessary, you can also use the <code>@FEELProperty</code> annotation for those getters representing a component name which would result in an invalid Java identifier.</p></li>
+<li><p><code>java.util.Map</code> interface: The map needs to define the appropriate entries, with the keys corresponding to the component name in the DMN <code>ItemDefinition</code>.</p></li>
+</ul>
+<h2 id='range-or-interval'>range (or interval)</h2>
+<blockquote>
+<p>Example interval between 1 and 10, including the boundaries (a closed interval on both endpoints):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[ 1 .. 10 ]
+</code></pre></div>
+<blockquote>
+<p>Example interval between 1 hour and 12 hours, including the lower boundary (a closed interval), but excluding the upper boundary (an open interval):</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[ duration("PT1H") .. duration("PT12H") )
+</code></pre></div>
+<p>The syntax of a range is defined in the following formats:</p>
+
+<p><img src="images/range_ebnf-39d37d2b.png" alt="FEEL range ebnf" /></p>
+
+<p>The expression for the endpoint must return a comparable value, and the lower bound endpoint must be lower than the upper bound endpoint.</p>
+
+<p>You can use ranges in decision tables to test for ranges of values, or use ranges in simple literal expressions.</p>
+
+<p>For example, the following literal expression returns <code>true</code> if the value of a variable <code>x</code> is between <code>0</code> and <code>100</code>:<br/>
+<code>x in [ 1 .. 100 ]</code></p>
+<h2 id='list'>list</h2>
+<blockquote>
+<p>Example:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[ 2, 3, 4, 5 ]
+</code></pre></div>
+<p>FEEL has <code>list</code> literals that you can use to create lists of items.
+A <code>list</code> in FEEL is represented by a comma-separated list of values enclosed in square brackets.</p>
+
+<blockquote>
+<p>Example to return the second element of a list <code>x</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>x[2]
+</code></pre></div>
+<blockquote>
+<p>Example to return the second-to-last element of a list <code>x</code>:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>x[-2]
+</code></pre></div>
+<p>All lists in FEEL contain elements of the same type and are immutable.
+Elements in a list can be accessed by index, where the first element is <code>1</code>.
+Negative indexes can access elements starting from the end of the list so that <code>-1</code> is the last element.</p>
+
+<p>Elements in a list can also be counted by the function count, which uses the list of elements as the parameter.
+For example, the following expression returns <code>4</code>:<br/>
+<code>count([ 2, 3, 4, 5 ])</code></p>
 <h1 id='string-functions'>String functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for <code>string</code>s.</p>
 
