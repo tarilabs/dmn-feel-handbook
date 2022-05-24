@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta
             name="Drools DMN FEEL handbook"
-            content="FEEL Pocket reference, FEEL handbook, FEEL vademecum of the FEEL expression language from the DMN specification"
+            content="FEEL handbook, FEEL vademecum, FEEL cheatsheet, FEEL pocket reference of the FEEL expression language from the DMN specification"
         >
     <title>Drools DMN FEEL handbook</title>
 
@@ -309,14 +309,6 @@
             <a href="#dmn-feel-handbook" class="toc-h1 toc-link" data-title="DMN FEEL handbook">DMN FEEL handbook</a>
           </li>
           <li>
-            <a href="#boolean-functions" class="toc-h1 toc-link" data-title="Boolean functions">Boolean functions</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#not-negand" class="toc-h2 toc-link" data-title="not( negand )">not( negand )</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#string-functions" class="toc-h1 toc-link" data-title="String functions">String functions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -478,6 +470,14 @@
                   </li>
                   <li>
                     <a href="#even-number" class="toc-h2 toc-link" data-title="even( number )">even( number )</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#boolean-functions" class="toc-h1 toc-link" data-title="Boolean functions">Boolean functions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#not-negand" class="toc-h2 toc-link" data-title="not( negand )">not( negand )</a>
                   </li>
               </ul>
           </li>
@@ -646,39 +646,18 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li>Refer to the <a href='https://www.drools.org/learn/documentation.html'>full Drools doc (here)</a>.</li>
+            <li>Open the <a href='https://www.drools.org/learn/documentation.html'>full Drools manual (here)</a>.</li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='dmn-feel-handbook'>DMN FEEL handbook</h1>
-<p>This is a vademecum for the FEEL expression language from the DMN specification, as also implemented by the Drools DMN open source engine.</p>
+<p>This is a vademecum for the FEEL expression language from the DMN specification, as also implemented by the <a href='https://www.drools.org/learn/dmn.html'>Drools DMN open source engine</a>.</p>
 
-<p>This is not intented as an exahustive documentation of the <a href='https://www.drools.org/learn/dmn.html'>DMN capabilities of Drools</a>; this is intended as a handy a pocket reference for FEEL usage.
-You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
-<h1 id='boolean-functions'>Boolean functions</h1>
-<p>This chapter explores the DMN FEEL specification built-in functions for <code>boolean</code>s.</p>
-<h2 id='not-negand'>not( negand )</h2>
-<blockquote>
-<p>Examples</p>
-</blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>not( true ) = false
-not( null ) = null
-</code></pre></div>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code>negand</code></td>
-<td><code>boolean</code></td>
-</tr>
-</tbody></table>
+<p>This is not intented as an exahustive documentation of the DMN capabilities of Drools; this is intended as a handy a pocket reference for FEEL usage, a FEEL pocket guide, a FEEL reference, a FEEL quick reference, a FEEL cheatsheet,<br/><strong>a FEEL handbook</strong>.</p>
 
-<p>Performs the logical negation of the <code>negand</code> operand.</p>
+<p>You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
 <h1 id='string-functions'>String functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for <code>string</code>s.</p>
 
@@ -1916,6 +1895,28 @@ even ( 2 ) = true
 </tbody></table>
 
 <p>Returns <code>true</code> if the specified number is even.</p>
+<h1 id='boolean-functions'>Boolean functions</h1>
+<p>This chapter explores the DMN FEEL specification built-in functions for <code>boolean</code>s.</p>
+<h2 id='not-negand'>not( negand )</h2>
+<blockquote>
+<p>Examples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>not( true ) = false
+not( null ) = null
+</code></pre></div>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>negand</code></td>
+<td><code>boolean</code></td>
+</tr>
+</tbody></table>
+
+<p>Performs the logical negation of the <code>negand</code> operand.</p>
 <h1 id='date-and-time-functions'>Date and time functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for temporal <code>date and time</code> comparisons.</p>
 <h2 id='is-value1-value2'>is( value1, value2 )</h2>
