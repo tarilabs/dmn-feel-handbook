@@ -350,6 +350,23 @@
               </ul>
           </li>
           <li>
+            <a href="#feel-expressions" class="toc-h1 toc-link" data-title="FEEL expressions">FEEL expressions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#if-expression" class="toc-h2 toc-link" data-title="if expression">if expression</a>
+                  </li>
+                  <li>
+                    <a href="#for-expression" class="toc-h2 toc-link" data-title="for expression">for expression</a>
+                  </li>
+                  <li>
+                    <a href="#quantified-expression" class="toc-h2 toc-link" data-title="quantified expression">quantified expression</a>
+                  </li>
+                  <li>
+                    <a href="#in-expression" class="toc-h2 toc-link" data-title="in expression">in expression</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#string-functions" class="toc-h1 toc-link" data-title="String functions">String functions</a>
               <ul class="toc-list-h2">
                   <li>
@@ -698,6 +715,8 @@
 
 <p>This is not intented as an exahustive documentation of the DMN capabilities of Drools; this is intended as a handy a pocket reference for FEEL usage, a FEEL pocket guide, a FEEL reference, a FEEL quick reference, a FEEL cheatsheet,<br/><strong>a FEEL handbook</strong>.</p>
 
+<p>Looking for a gentle introduction to the DMN standard? We have just the right crash course on DMN, freely available for you at: <a href="https://learn-dmn-in-15-minutes.com">learn-dmn-in-15-minutes.com</a>.</p>
+
 <p>You can refer to the complete <a href='https://www.drools.org/learn/documentation.html'>Drools DMN Engine documentation</a> on the main Drools website <a href='https://www.drools.org/learn/documentation.html'>here</a>.</p>
 
 <p>The FEEL (Friendly Enough Expression Language) is intended as a common ground between business analysts, programmers, domain experts and stakeholders.</p>
@@ -711,7 +730,7 @@
 <li>Three-valued logic (<code>true</code>, <code>false</code>, <code>null</code>)</li>
 </ul>
 
-<p>The following sections presents basic FEEL syntax. You can refer to the other sections for details of the built-in and extended FEEL functions.</p>
+<p>The following chapters presents basic FEEL syntax. You can refer to the other chapters for details of the built-in and extended FEEL functions.</p>
 <h1 id='feel-values'>FEEL values</h1>
 <p>FEEL: supports the following data types:</p>
 
@@ -902,6 +921,60 @@ Negative indexes can access elements starting from the end of the list so that <
 <p>Elements in a list can also be counted by the function count, which uses the list of elements as the parameter.
 For example, the following expression returns <code>4</code>:<br/>
 <code>count([ 2, 3, 4, 5 ])</code></p>
+<h1 id='feel-expressions'>FEEL expressions</h1>
+<p>This chapter explores some of the most useful FEEL operators to build basic expressions.</p>
+<h2 id='if-expression'>if expression</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>if 20 &gt; 0 then "YES" else "NO" = "YES"
+if (20 - (10 * 2)) &gt; 0 then "YES" else "NO" = "NO"
+if (2 ** 3) = 16 then "YES" else "NO" = "YES"
+if (4 / 2) != 2 then "YES" else "NO" = "NO"
+</code></pre></div>
+<p>You can use the <code>if expression</code> as the classic if-then-else operator in other languages.</p>
+
+<aside class="warning">
+Please notice that the `else` part is always mandatory.
+</aside>
+<h2 id='for-expression'>for expression</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>for i in [1, 2, 3] return i * i = [1, 4, 9]
+for i in [1,2,3], j in [1,2,3] return i*j = [1, 2, 3, 2, 4, 6, 3, 6, 9]
+</code></pre></div>
+<p>You can use the <code>for expression</code> to produce new values based on the iteration context(s).</p>
+
+<p>This is similar to list comprehension and mapping from Functional Programming.</p>
+<h2 id='quantified-expression'>quantified expression</h2>
+<p>These operators (<code>some</code>, <code>every</code>) are similar to list comprehension for filtering from Functional Programming concepts.</p>
+<h3 id='some-name-in-list-satisfies-predicate'>some (name) in (list) satisfies (predicate)</h3>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>some i in [1, 2, 3] satisfies i &gt; 3 = true
+some i in [1, 2, 3] satisfies i &gt; 4 = false
+</code></pre></div>
+<p>You can use the <code>some</code> to check if at least some element satisfies specific conditions from iteration context(s) built from the supplied list.</p>
+<h3 id='every-name-in-list-satisfies-predicate'>every (name) in (list) satisfies (predicate)</h3>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>every i in [1, 2, 3] satisfies i &gt; 1 = false
+every i in [1, 2, 3] satisfies i &gt; 0 = true
+</code></pre></div>
+<p>You can use the <code>every</code> to check if all the elements satisfies specific conditions from iteration context(s) built from the supplied list.</p>
+<h2 id='in-expression'>in expression</h2>
+<blockquote>
+<p>Examples:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>1 in [1..10] = true
+1 in (1..10] = false
+10 in [1..10] = true
+10 in [1..10) = false
+</code></pre></div>
+<p>You can use the <code>in expression</code> to check if a given value is matched by a specified range.</p>
 <h1 id='string-functions'>String functions</h1>
 <p>This chapter explores the DMN FEEL specification built-in functions for <code>string</code>s.</p>
 
